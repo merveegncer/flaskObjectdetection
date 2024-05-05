@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection</title>
+</head>
+<body>
+    <h1>Object Detection</h1>
+    <h2>{{count}}</h2>
+
+    <form action="/change_model" method="post">
+        <select name="model_choice">
+            <option value="model1">Model 1</option>
+            <option value="model2">Model 2</option>
+        </select>
+        <button type="submit">Change Model</button>
+    </form>
+
+    <img id="video_stream" src="" alt="Video Stream" width="640" height="480">
+
+    <script>
+        // JavaScript kullanarak video akışını güncelleyin
+        const video = document.getElementById('video_stream');
+        const stream_url = '/video_feed'; // Flask endpoint'i
+        video.src = stream_url;
+    </script>
+</body>
+</html>
